@@ -40,16 +40,21 @@ const useStyles = makeStyles({
 
 });
 
-const Display = ({title,type,price}) => {
+const Display = ({id,title,type,price}) => {
     const classes = useStyles();
     
-    const data = useContext({ListContext});
+    //  const data = useContext(ListContext);
+    //  console.log(data);
+
+    
+
+     const {removeItem} = useContext(ListContext);
+
     return (
         <>
             <div >
                 
-                <Grid container spacing={3} className={classes.cards}>
-                    <Grid item>
+               
                         <Card className={classes.root}>
                             <CardContent>
                                 <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -77,12 +82,10 @@ const Display = ({title,type,price}) => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Add to Cart</Button>
+                                <Button size="small" onClick={() => removeItem(id)} >Add to Cart</Button>
                             </CardActions>
                         </Card>
-                    </Grid>
-                   
-                </Grid>
+   
             
             </div>
         </>
