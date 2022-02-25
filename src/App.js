@@ -1,10 +1,10 @@
 import React from "react";
-import Order from "../src/components/Order";
-
+import Display from "./components/Display";
+import Render from "../src/components/Render";
 function App() {
   return (
     <>
-     <Order />
+     <Render />
     </>   
   );
 }
